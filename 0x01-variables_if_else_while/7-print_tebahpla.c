@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-int main (void)
+/**
+ * main - prints the alphabet backwards
+ * Return: 0 upon completion
+ */
+
+int main(void)
 {
 	int num;
 
