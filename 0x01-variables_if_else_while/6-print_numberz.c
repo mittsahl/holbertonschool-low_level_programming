@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - prints numbers 0 -9
+ * Return: 0 upon completion
+ */
+
 int main(void)
 {
 	int num;
