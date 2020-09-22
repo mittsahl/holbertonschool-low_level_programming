@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * print_natural - prints sum of all numbers
+ * main - prints sum of all numbers
  * divisible by 3 and 5 under 1024
  * Return: void
  */
