@@ -1,18 +1,18 @@
 #include "holberton.h"
 
 /**
- * times_table - prints times table up to int n
+ * print_times_table - prints times table up to int n
  * Return: void
  * @n: int passed to function
  */
 
 void print_times_table(int n)
 {
-        int columns;
-        int rows;
-        int product;
+	int columns;
+	int rows;
+	int product;
 
-        if (n >= 0 && n <= 15)
+	if (n >= 0 && n <= 15)
 	{
 		for (rows = 0; rows <= n; rows++)
 		{
