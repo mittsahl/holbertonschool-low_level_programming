@@ -13,7 +13,7 @@ int main(void)
 	unsigned long largest;
 
 	n = 612852475143;
-	largest= -1;
+	largest = -1;
 
 	while (n % 2 == 0)
 	{
