@@ -14,7 +14,7 @@ void print_rev(char *str)
 	length = 0;
 	while (str[length] != '\0')
 	{
-		length++;;
+		length++;
 	}
 	i = length - 1;
 	for (; i >= 0; i--)
