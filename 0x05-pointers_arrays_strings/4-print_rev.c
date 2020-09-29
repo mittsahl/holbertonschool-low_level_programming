@@ -13,6 +13,7 @@ void print_rev(char *s)
 
 	for (length = 0; s[length] != '\0'; length++)
 		ch++;
+	ch--;
 	for (; length >= 0; length--)
 	{
 		_putchar(*ch);
