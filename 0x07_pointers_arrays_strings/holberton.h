@@ -42,7 +42,7 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *s);
 char *cap_string(char *);
 char *leet(char *);
-char *rot13(char*);
+char *rot13(char *);
 void print_number(int n);
 char *infinte_add(char *n1, char *n2, char *r, int size_r);
 void print_buffer(char *b, int size);
@@ -56,4 +56,4 @@ char *_strstr(char *haystack, char *needle);
 void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
 void set_string(char **s, char *to);
-#endif /*HOLBERON_H*
+#endif /*HOLBERTON_H */
