@@ -12,7 +12,7 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int bytes = 0;
 	int i, j;
 
-	if (accept == '\0' || s == '\0')
+	if (!*s || *!accept)
 		return (0);
 	for (i = 0; s[i] != ' '; i++)
 	{
