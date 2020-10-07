@@ -31,6 +31,8 @@ int check_Pal(int length, int start, char *s)
 		return (0);
 	if (s[start] == s[length])
 		return (check_Pal(length - 1, start + 1, s));
+	else
+		return (0);
 }
 
 /**
