@@ -65,5 +65,5 @@ int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int is_palindrome(char *s);
 int check(int n, int i);
-int checkPal(int length, int start, char *s);
+int check_Pal(int length, int start, char *s);
 #endif /*HOLBERTON_H */
