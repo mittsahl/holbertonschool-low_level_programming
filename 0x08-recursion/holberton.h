@@ -67,4 +67,8 @@ int is_palindrome(char *s);
 int check(int n, int i);
 int check_Pal(int length, int start, char *s);
 int wildcmp(char *s1, char *s2);
+int backtrack(char *s1, char *s2, int s1end, int idx2);
+int length(char *string, int count);
+int check_Wild2(char *s1, char *s2, int idx1, int idx2, int s1Len);
+int backtrack(char *s1, char *s2, int s1end, int idx2);
 #endif /*HOLBERTON_H */
