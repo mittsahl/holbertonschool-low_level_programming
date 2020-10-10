@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "holberton.h"
+#include <stdlib.h>
 
 /**
  * main - prints argv[1] * argv[2] to command line
@@ -20,28 +20,11 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		first = _atoi(argv[1]);
-		second = _atoi(argv[2]);
+		first = atoi(argv[1]);
+		second = atoi(argv[2]);
 		printf("%d\n", first * second);
-		printf("%d\n", argc);
 	}
 	return (0);
 }
 
-/**
- * _atoi - converts a string to an integer
- * @s: string passed to function from main
- * Return: the value of int
- */
-
-int _atoi(char *s)
-{
-	int num, i, sign = 1;
-
-	for (i = 0; (s[i] < '0' || s[i] > '9') && s[i] != '\0'; i++)
-		sign = (s[i] == '-') ? -1 : 1;
-	for (num = 0; s[i] >= '0' && s[i] <= '9'; ++i)
-		num = 10 * num + (s[i] - '0');
-	return (sign * num);
-}
 
