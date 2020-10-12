@@ -16,14 +16,14 @@ char **strtow(char *str)
 	int wIdx = 0;
 	int cpyIdx;
 	int i2;
-	
+
 	if (str == NULL || _strlen(str) == 0)
 		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
 		if (_isalpha(str[i]) == 1 && str[i + 1] == ' ')
 			numOfWords++;
-	}	
+	}
 	i--;
 	if (str[i] != ' ')
 		numOfWords++;
@@ -32,17 +32,18 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if ((str[i] == ' ' || i == 0) && str[i + 1] != ' ' && str[i + 1] != '\0')
 		{
-			i++;
+			if (str[i] == ' ')
+				i++;
 			charLength = 1;
 			i2 = i;
 			cpyIdx = 0;
 			for (j = i; str[j] != ' ' && str[j]; j++)
-				charLength++;		
+				charLength++;
 			words[wIdx] = (char *)malloc(charLength);
 			if (words[wIdx] == NULL)
-			{	
+			{
 				for (; wIdx > 0; wIdx--)
 					free(words[wIdx]);
 				free(words);
@@ -50,10 +51,10 @@ char **strtow(char *str)
 			}
 			words[wIdx][charLength] = '\0';
 			for (; i2 < j; i2++, cpyIdx++)
-				words[wIdx][cpyIdx] = str[i2];		
+				words[wIdx][cpyIdx] = str[i2];
 			wIdx++;
-		}	
-	}	
+		}
+	}
 	wIdx++;
 	words[wIdx] = '\0';
 	return (words);
