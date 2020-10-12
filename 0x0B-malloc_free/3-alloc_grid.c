@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
 
 /**
 * alloc_grid - allocates a 2d array in memory
