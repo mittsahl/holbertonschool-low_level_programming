@@ -30,6 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (s2Idx = 0; s2Idx < (int)n && s2[s2Idx]; s2Idx++)
 			buf[bufIdx + s2Idx] = s2[s2Idx];
 	}
+	buf[bufIdx + s2Idx + 1] = '\0';
 	return (buf);
 }
 
