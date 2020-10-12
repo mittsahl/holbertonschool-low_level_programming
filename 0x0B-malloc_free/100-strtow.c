@@ -17,7 +17,7 @@ char **strtow(char *str)
 	int cpyIdx;
 	int i2;
 	
-	if (str == NULL)
+	if (str == NULL || _strlen(str) == 0)
 		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
@@ -72,22 +72,19 @@ int _isalpha(int c)
 	else
 		return (0);
 }
+
 /**
- * _strncat - concatenates two strings up to n bytes
- * Return: dest;
- * @src: src of copied bytes
- * @dest: where bytes are copied to
- * @n: number of bytes to be copied
+ * _strlen - returns the length of string s
+ * Return: length
+ * @s: string passed from main
  */
 
-char *_strncat(char *dest, char *src, int n)
+int _strlen(char *s)
 {
-	int i, destLength;
+	int length;
+	char *start = s;
 
-	for (destLength = 0; dest[destLength]; destLength++)
+	for (length = 0; start[length] != '\0'; length++)
 		;
-	for (i = 0; i < n && src[i]; i++)
-		dest[destLength + i] = src[i];
-	dest[destLength + i] = '\0';
-	return (dest);
+	return (length);
 }
