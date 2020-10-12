@@ -46,7 +46,7 @@ char **strtow(char *str)
 			{	
 				return (NULL);
 			}
-			words[wIdx][charLength] = '\0';
+			words[wIdx][charLength + 1] = '\0';;
 			for (; i2 < j; i2++, cpyIdx++)
 				words[wIdx][cpyIdx] = str[i2];		
 			wIdx++;
