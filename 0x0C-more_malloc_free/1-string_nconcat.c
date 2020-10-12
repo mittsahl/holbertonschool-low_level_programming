@@ -24,7 +24,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		for (; s1[bufIdx]; bufIdx++)
 			buf[bufIdx] = s1[bufIdx];
-	}	
+	}
 	if (s2 != NULL)
 	{
 		for (s2Idx = 0; s2Idx < (int)n && s2[s2Idx]; s2Idx++)
