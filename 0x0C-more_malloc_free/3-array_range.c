@@ -3,7 +3,7 @@
 
 /**
 * array_range - creates an array of integers
-* @min: int value
+* @max: int value
 * @min: int value
 * Return: pointer to the array else null
 */
