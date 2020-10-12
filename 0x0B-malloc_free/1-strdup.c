@@ -13,10 +13,10 @@ char *_strdup(char *str)
 	char *copy;
 
 	if (str == NULL)
-		return (0);
-	copy = malloc(length);
+		return (NULL);
+	copy = malloc(length + 1);
 	if (copy == NULL)
-		return (0);
+		return (NULL);
 	_strcpy(copy, str);
 	return (copy);
 }
