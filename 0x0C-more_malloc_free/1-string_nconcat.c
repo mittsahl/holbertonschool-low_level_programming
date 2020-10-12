@@ -15,9 +15,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *buf;
 
 	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-	s1length = _strlen(s1);
-	s2length = _strlen(s2);
+	{
+		char *buf = "";
+		return (buf);
+	}	
+	if (s1 != NULL)
+		s1length = _strlen(s1);
+	else 
+		s1length = 0;
+	if (s2 != NULL)
+		s2length = _strlen(s2);
+	else
+		s2length = 0;
 	if (s2length > (int)n)
 		s2length = n;
 	buf = malloc(s1length + s2length + 1);
