@@ -10,17 +10,19 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int firstLength = _strlen(s1);
-	int secondLength = _strlen(s2);
+	int firstLength;
+	int secondLength;
 	char *middle;
 	char *concat;
 
-	if (s1 == NULL)
-		return (s2);
-	if (s2 == NULL)
-		return (s1);
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
+	else if (s1 == NULL)
+		return (s2);
+	else if (s2 == NULL)
+		return (s1);
+	firstLength = _strlen(s1);
+	secondLength = _strlen(s2);
 	concat = malloc(firstLength + secondLength + 1);
 	middle = &concat[firstLength];
 	if (concat == NULL)
