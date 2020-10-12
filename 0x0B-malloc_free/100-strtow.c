@@ -28,7 +28,7 @@ char **strtow(char *str)
 	i--;
 	if (str[i] != ' ')
 		numOfWords++;
-	words = (char **)malloc(numOfWords * sizeof(char *));
+	words = (char **)malloc(numOfWords * sizeof(char *) + 1);
 	if (words == NULL)
 		return (NULL);
 	for (i = 0; str[i]; i++)
@@ -44,15 +44,20 @@ char **strtow(char *str)
 			words[wIdx] = (char *)malloc(charLength);
 			if (words[wIdx] == NULL)
 			{	
+				for (; wIdx > 0; wIdx--)
+					free(words[wIdx]);
+				free(words);
 				return (NULL);
 			}
-			words[wIdx][charLength + 1] = '\0';;
+			words[wIdx][charLength] = '\0';
 			for (; i2 < j; i2++, cpyIdx++)
 				words[wIdx][cpyIdx] = str[i2];		
 			wIdx++;
 		}	
 	}	
-	return ((char **)words);
+	wIdx++;
+	words[wIdx] = '\0';
+	return (words);
 }
 
 /**
