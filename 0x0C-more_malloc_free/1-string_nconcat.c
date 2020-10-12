@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
-* string_nconcat -  
+* string_nconcat - concatenates n bytes from s2 and s1
 * @s1: string passed from main
 * @s2:  string passed from main
 * @n: number of bytes from s2 to be added to buffer
@@ -11,24 +11,25 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int bufIdx, s2Idx, length;
+	int bufIdx, s2Idx, s1length, s2length;
 	char *buf;
 
-	if (s2 == NULL)
-		length = 0;
-	else
-		length = _strlen(s2);
-	if (length > (int) n)
-		length = (int)n;
-	buf = malloc(_strlen(s1) + length + 1);
+	s1length = _strlen(s1);
+	s2length = _strlen(s2);
+	buf = malloc(s1length + s2length + 1);
 	if (buf == NULL)
 		return (NULL);
-	for (bufIdx = 0; s1[bufIdx]; bufIdx++)
-		buf[bufIdx] = s1[bufIdx];
-	for (s2Idx = 0; s2Idx < length; s2Idx++)
-		buf[bufIdx + s2Idx] = s2[s2Idx];
-	s2Idx++;
-	buf[bufIdx + s2Idx] = '\0';
+	bufIdx = 0;
+	if (s1 != NULL)
+	{
+		for (; s1[bufIdx]; bufIdx++)
+			buf[bufIdx] = s1[bufIdx];
+	}	
+	if (s2 != NULL)
+	{
+		for (s2Idx = 0; s2Idx < (int)n && s2[s2Idx]; s2Idx++)
+			buf[bufIdx + s2Idx] = s2[s2Idx];
+	}
 	return (buf);
 }
 
