@@ -1,14 +1,14 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "holberton.h"
+
 /**
- *_realloc - bla
- *@ptr: n;a
- *@old_size: bla
- *@new_size: bla
- *Return: bla
+ * _realloc - reallocates mem for a ptr
+ * @ptr: pointer
+ * @old_size: old size
+ * @new_size: new size
+ * Return: pointer or null
  */
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	unsigned int count = 0, i = 0;
@@ -26,6 +26,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		ptr = malloc(new_size);
 		if (ptr == NULL)
 			return (NULL);
+		return (ptr);
 	}
 	if (new_size < old_size)
 		old_size = new_size;
@@ -48,7 +49,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	for (i = 0; i < new_size; i++)
 		ptr1[i] = trash[i];
+	free(trash);
 	return (ptr1);
 }
-
-
