@@ -2,45 +2,32 @@
 #include "holberton.h"
 
 /**
-* string_nconcat - concatenates n bytes from s2 and s1
-* @s1: string passed from main
-* @s2:  string passed from main
-* @n: number of bytes from s2 to be added to buffer
-* Return: pointer to new mem else null
+* string_nconcat - concatenates n bytes of s2 with s1
+* @s1: string from main
+* @s2: string from main
+* @n: number of bytes to concatenate from s2
+* Return: pointer to new string
 */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int bufIdx, s2Idx, s1length, s2length;
+	int s1length, bufIdx, s2Idx;
 	char *buf;
 
-	if (s1 == NULL && s2 == NULL)
-		return ("");
-	if (s1 != NULL)
-		s1length = _strlen(s1);
-	else 
-		s1length = 0;
-	if (s2 != NULL)
-		s2length = _strlen(s2);
-	else
-		s2length = 0;
-	if (s2length > (int)n)
-		s2length = n;
-	buf = malloc(s1length + s2length + 1);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	s1length = _strlen(s1);
+	buf = malloc((s1length + (int)n + 1) * sizeof(char));
 	if (buf == NULL)
 		return (NULL);
-	bufIdx = 0;
-	if (s1 != NULL)
-	{
-		for (; s1[bufIdx]; bufIdx++)
-			buf[bufIdx] = s1[bufIdx];
-	}
-	if (s2 != NULL)
-	{
-		for (s2Idx = 0; s2Idx < (int)n && s2[s2Idx]; s2Idx++)
-			buf[bufIdx + s2Idx] = s2[s2Idx];
-	}
-	buf[bufIdx + s2Idx + 1] = '\0';
+	for (bufIdx = 0; s1[bufIdx]; bufIdx++)
+		buf[bufIdx] = s1[bufIdx];
+	for (s2Idx = 0; s2Idx < (int)n; s2Idx++)
+		buf[bufIdx + s2Idx] = s2[s2Idx];
+	s2Idx++;
+	buf[bufIdx + s2Idx] = '\0';
 	return (buf);
 }
 
