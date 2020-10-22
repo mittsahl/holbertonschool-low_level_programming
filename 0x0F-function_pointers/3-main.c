@@ -16,7 +16,7 @@ int main(int argc, char **av)
 	int num2;
 	int (*func)(int, int);
 	char *op;
-	
+
 	if (argc != 4)
 	{
 		printf("Error\n");
