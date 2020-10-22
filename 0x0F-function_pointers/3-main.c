@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "3-calc.h"
 
 /**
@@ -28,6 +29,11 @@ int main(int argc, char **av)
 	}
 	num1 = atoi(av[1]);
 	num2 = atoi(av[3]);
+	if ((num1 >= INT_MAX || num1 <= INT_MIN) || (num2 >= INT_MAX || num2 <= INT_MIN)) 
+	{
+		printf("Integer overflow\n");
+		return (0);
+	}
 	printf("%d\n", func(num1, num2));
 	return (0);
 }
