@@ -29,7 +29,7 @@ int main(int argc, char **av)
 	}
 	num1 = atoi(av[1]);
 	num2 = atoi(av[3]);
-	if ((*av[2] == '/' || *av[2]== '%') && num2 == 0)
+	if ((*av[2] == '/' || *av[2] == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
