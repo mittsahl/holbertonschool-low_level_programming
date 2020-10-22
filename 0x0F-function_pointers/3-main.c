@@ -15,23 +15,23 @@ int main(int argc, char **av)
 	int num1;
 	int num2;
 	int (*func)(int, int);
-	char op;
+	char *op;
 	
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	op = av[2][0];
+	op = &av[2][0];
 	func = get_op_func(op);
-	if (func == NULL || argv[2][1] != '\0')
+	if (func == NULL || av[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 	num1 = atoi(av[1]);
 	num2 = atoi(av[3]);
-	if ((op == '/' || op == '%') && n2 == 0)
+	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(42069);
