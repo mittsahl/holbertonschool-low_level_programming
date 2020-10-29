@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "lists.h"
 
 /**
@@ -14,7 +15,8 @@ list_t *add_node(list_t **head, const char *str)
 	
 	if (newNode == NULL)
 		return (NULL);
-	newNode->str = (char *)str;
+	
+	newNode->str = strdup(str);;
 	newNode->len = _strlen((char *)str);
 	newNode->next = *head;
 	*head = newNode;
