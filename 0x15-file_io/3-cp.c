@@ -41,6 +41,7 @@ int main(int ac, char **av)
 	if (to < 0 || from < 0)
 	{
 		printf("Error: Can't close fd %d\n", ((to < 0) ? to : from));
+		exit (100);
 	}
 	free(buf);
 	return (0);
