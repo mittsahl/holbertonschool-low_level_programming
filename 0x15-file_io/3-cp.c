@@ -27,11 +27,13 @@ int main(int ac, char **av)
 	if (from < 0 || readBytes < 0)
 	{
 		printf("Error: Can't read from file %s\n", av[1]);
+		free(buf);
 		exit(98);
 	}
 	if (to < 0 || wroteBytes < 0)
 	{
 		printf("Error: Can't write to %s\n", av[2]);
+		free(buf);
 		exit(99);
 	}
 	to = close(to);
@@ -40,6 +42,7 @@ int main(int ac, char **av)
 	{
 		printf("Error: Can't close fd %d\n", ((to < 0) ? to : from));
 	}
+	free(buf);
 	return (0);
 }
 
