@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* create_file - creates a file  
+* create_file - creates a file
 * @file: name of the file
 * @text_content: the contents of the file
 * Return: 0
@@ -12,7 +12,7 @@ int create_file(const char *file, char *text_content)
 	int fileDes;
 	ssize_t written;
 	size_t len;
-	
+
 	if (!file)
 		return (-1);
 	fileDes = open(file, O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR);
@@ -24,7 +24,7 @@ int create_file(const char *file, char *text_content)
 		written = write(fileDes, text_content, len);
 		if (written < 0)
 			return (-1);
-	}		
+	}
 	close(fileDes);
 	return (1);
 }
