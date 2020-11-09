@@ -28,5 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (readBytes < 0)
 		return (0);
 	wroteBytes = write(STDOUT_FILENO, buf, readBytes);
+	close(file);
+	free(buf);
 	return ((readBytes == wroteBytes)  ? wroteBytes : readBytes);
 }
