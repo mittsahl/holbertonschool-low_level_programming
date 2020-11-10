@@ -10,7 +10,7 @@
 int main(int ac, char **av)
 {
 	int from, to, flag = 0;
-	ssize_t readBytes, wroteBytes, ssize_t bytes = 0;
+	ssize_t readBytes, wroteBytes, bytes = 0;
 	char *buf = malloc(1024);
 
 	if (buf == NULL)
