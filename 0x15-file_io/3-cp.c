@@ -9,8 +9,8 @@
 
 int main(int ac, char **av)
 {
-	int from, to;
-	ssize_t readBytes, wroteBytes;
+	int from, to, flag = 0;
+	ssize_t readBytes, wroteBytes, ssize_t bytes = 0;
 	char *buf = malloc(1024);
 
 	if (buf == NULL)
@@ -22,8 +22,17 @@ int main(int ac, char **av)
 	}
 	from = open(av[1], O_RDONLY);
 	to = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	readBytes = read(from, buf, 1024);
-	wroteBytes = write(to, buf, readBytes);
+	while (flag != -1)
+	{	
+		readBytes = read(from, buf, 1024);
+		if (readBytes == 0)
+			flag = -1;
+		bytes += readBytes;
+		if (bytes % 1024 == 0 && bytes != 0)
+			wroteBytes = write(to, buf, readBytes);
+		if (bytes % 1024 != 0)
+			wroteBytes = write(to, buf, (bytes % 1024));
+	}
 	if (from < 0 || readBytes < 0)
 	{
 		printf("Error: Can't read from file %s\n", av[1]);
