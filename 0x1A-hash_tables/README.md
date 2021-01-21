@@ -1,2 +1,1 @@
-This directory is about using hash tables in c
-
+This project is about using hash tables
