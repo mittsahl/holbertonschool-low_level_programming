@@ -1,1 +1,1 @@
-This project is about using hash tables
+This repo is about the hash table data structure
